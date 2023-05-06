@@ -31,9 +31,10 @@ namespace FreeMove
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            // Currently doesn't work
+            // Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }

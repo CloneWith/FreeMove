@@ -16,17 +16,17 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
-  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>false</SignManifests>
     <AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
     <FileVersion>$(AssemblyFileVersion)</FileVersion>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>FreeMove.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
@@ -45,5 +45,8 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.0" />
     <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 </Project>

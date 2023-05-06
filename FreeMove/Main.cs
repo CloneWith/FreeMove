@@ -30,12 +30,13 @@ using System.Runtime.InteropServices;
 
 namespace FreeMove
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
+        public string Githuburl = "https://github.com/Sunnyboy971/FreeMove";
         bool safeMode = true;
 
         #region Initialization
-        public Form1()
+        public Main()
         {
             //Initialize UI elements
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace FreeMove
             if (Settings.AutoUpdate)
             {
                 //Update the menu item accordingly
-                checkOnProgramStartToolStripMenuItem.Checked = true;
+                checkUpdateStartupMenuItem.Checked = true;
                 //Start a background update task
                 Updater updater = await Task<bool>.Run(() => Updater.SilentCheck());
                 //If there is an update show the update dialog
@@ -232,7 +233,7 @@ namespace FreeMove
             };
             Tip.SetToolTip(this.textBox_From, "Select the folder you want to move");
             Tip.SetToolTip(this.textBox_To, "Select where you want to move the folder");
-            Tip.SetToolTip(this.chkBox_originalHidden, "Select whether you want to hide the shortcut which is created in the old location or not");
+            Tip.SetToolTip(this.chkBox_originalHidden, "Select whether to hide the shortcut created in the old location");
         }
 
         private void Reset()
@@ -301,26 +302,13 @@ namespace FreeMove
         //Open GitHub page
         private void GitHubToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenURL("https://github.com/imDema/FreeMove");
+            OpenURL(Githuburl);
         }
 
         //Open the report an issue page on GitHub
         private void ReportAnIssueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenURL("https://github.com/imDema/FreeMove/issues/new");
-        }
-
-        //Show an update dialog
-        private void CheckNowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Updater(false).ShowDialog();
-        }
-
-        //Set to check updates on program start
-        private void CheckOnProgramStartToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            checkOnProgramStartToolStripMenuItem.Checked = !checkOnProgramStartToolStripMenuItem.Checked;
-            Settings.AutoUpdate = checkOnProgramStartToolStripMenuItem.Checked;
+            OpenURL(Githuburl + "/issues/new");
         }
         #endregion
 
@@ -362,6 +350,17 @@ namespace FreeMove
             noneToolStripMenuItem.Checked = false;
             fastToolStripMenuItem.Checked = false;
             fullToolStripMenuItem.Checked = true;
+        }
+
+        private void checkUpdatesMenuItem_Click(object sender, EventArgs e)
+        {
+            new Updater(false).ShowDialog();
+        }
+
+        private void checkUpdateStartupMenuItem_Click(object sender, EventArgs e)
+        {
+            checkUpdateStartupMenuItem.Checked = !checkUpdateStartupMenuItem.Checked;
+            Settings.AutoUpdate = checkUpdateStartupMenuItem.Checked;
         }
     }
 }

@@ -65,7 +65,7 @@ namespace FreeMove
                 }
                 else
                 {
-                    label1.Text = "There are no updates available";
+                    label1.Text = "You are using the latest version.";
                     progressBar1.Dispose();
                     button_Ok.Enabled = true;
                     button_Ok.Click += delegate { Dispose(); };
@@ -87,13 +87,12 @@ namespace FreeMove
         private void ShowUpdate()
         {
             progressBar1.Dispose();
-            label1.Font = new Font("Lucida Console", label1.Font.Size);
-            label1.Text = String.Format($"New version available\n\nCurrent Version: {CurrentVersion}\nLatest Version:  {NewVersion}\n\nOpen the download page?");
+            label1.Text = String.Format($"Current Version: {CurrentVersion}\nLatest Version:  {NewVersion}\n\nPress \"OK\" to go to the Github download page.");
             button_Cancel.Enabled = true;
             button_Cancel.Click += delegate { Dispose(); };
 
             button_Ok.Enabled = true;
-            button_Ok.Click += delegate { System.Diagnostics.Process.Start("https://github.com/ImDema/FreeMove/releases/latest"); Dispose(); };
+            button_Ok.Click += delegate { System.Diagnostics.Process.Start("https://github.com/Sunnyboy971/FreeMove/releases/latest"); Dispose(); };
         }
 
         public async Task<bool> CheckGitHub()

@@ -52,54 +52,64 @@ namespace FreeMove
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 35);
+            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(15, 109);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(260, 23);
+            this.progressBar1.Size = new System.Drawing.Size(357, 21);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 0;
             // 
             // label_Message
             // 
             this.label_Message.AutoSize = true;
+            this.label_Message.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Message.Location = new System.Drawing.Point(12, 9);
             this.label_Message.Name = "label_Message";
-            this.label_Message.Size = new System.Drawing.Size(131, 13);
+            this.label_Message.Size = new System.Drawing.Size(145, 15);
             this.label_Message.TabIndex = 1;
             this.label_Message.Text = "Moving files, please wait...";
             // 
             // label_Progress
             // 
-            this.label_Progress.Location = new System.Drawing.Point(149, 9);
+            this.label_Progress.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_Progress.AutoSize = true;
+            this.label_Progress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Progress.Location = new System.Drawing.Point(12, 37);
             this.label_Progress.Name = "label_Progress";
             this.label_Progress.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_Progress.Size = new System.Drawing.Size(123, 13);
+            this.label_Progress.Size = new System.Drawing.Size(48, 15);
             this.label_Progress.TabIndex = 2;
             this.label_Progress.Text = "123/321";
             this.label_Progress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(197, 64);
+            this.button_Cancel.AutoSize = true;
+            this.button_Cancel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_Cancel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_Cancel.Location = new System.Drawing.Point(0, 136);
             this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_Cancel.Size = new System.Drawing.Size(384, 25);
             this.button_Cancel.TabIndex = 3;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
             // 
-            // MoveDialog
+            // ProgressDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 94);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(384, 161);
             this.ControlBox = false;
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.label_Progress);
             this.Controls.Add(this.label_Message);
             this.Controls.Add(this.progressBar1);
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MoveDialog";
+            this.Name = "ProgressDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Moving Files...";

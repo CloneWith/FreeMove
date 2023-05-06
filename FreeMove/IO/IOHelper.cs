@@ -84,19 +84,19 @@ namespace FreeMove
                 source == Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) ||
                 source == Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)))
             {
-                exceptions.Add(new Exception($"It's recommended not to move the {source} directory, you can disable safe mode in the Settings tab to override this check"));
+                exceptions.Add(new Exception($"It's recommended not to move the {source} directory.\nYou can disable safe mode in the Settings tab to override this check"));
             }
 
             //Check for existence of directories
             if (!Directory.Exists(source))
-                exceptions.Add(new Exception("Source folder does not exist"));
+                exceptions.Add(new Exception("Source folder does not exist."));
             
             if (Directory.Exists(destination))
-                exceptions.Add(new Exception("Destination folder already contains a folder with the same name"));
+                exceptions.Add(new Exception("Destination folder already contains a folder with the same name.\nPlease manually move or rename it first."));
 
             try
             {
-                Form1 form = new Form1();
+                Main form = new Main();
                 if (!form.chkBox_createDest.Checked && !Directory.Exists(Directory.GetParent(destination).FullName))
                     exceptions.Add(new Exception("Destination folder does not exist"));
             }
@@ -135,7 +135,7 @@ namespace FreeMove
             try
             {
                 if (!CreateSymbolicLink(TestFile, Path.GetDirectoryName(destination), SymbolicLink.Directory))
-                    exceptions.Add(new Exception("Could not create a symbolic link.\nTry running as administrator"));
+                    exceptions.Add(new Exception("Could not create a symbolic link.\nTry running FreeMove as administrator."));
             }
             finally
             {

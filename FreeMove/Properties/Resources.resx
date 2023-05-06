@@ -118,23 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutContent" xml:space="preserve">
-    <value>imDema/FreeMove {0} -- Move directories without breaking shortcuts or installations 
+    <value>Sunnyboy/FreeMove {0} -- Move directories without breaking shortcuts or installations 
 Copyright(C) 2020  Luca De Martini
+Copyright(C) 2023  Sunnyboy971
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
-GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.If not, see&lt;http://www.gnu.org/licenses/&gt;.
+You should have received a copy of the GNU General Public License along with this program.If not, see&lt;http://www.gnu.org/licenses/&gt;.
 
-https://github.com/imDema</value>
+https://github.com/Sunnyboy971
+Original author: https://github.com/imDema</value>
   </data>
   <data name="DisableSafeModeMessage" xml:space="preserve">
     <value>It's strongly recommended not to move the "Program Files" or the "Program Files (x86)" directories as it can lead to unexpexted behaviour.
@@ -145,7 +140,7 @@ Are you sure you want to disable safe mode?</value>
   <data name="ErrorUnauthorizedLink" xml:space="preserve">
     <value>ERROR creating symbolic link.
 The folder is in the new position but the link could not be created.
-Try running as administrator
+Try running as administrator.
 
 Do you want to move the files back?</value>
   </data>

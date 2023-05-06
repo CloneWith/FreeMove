@@ -31,7 +31,7 @@ namespace FreeMove.IO
         bool sameDrive;
         CancellationTokenSource cts = new CancellationTokenSource();
         CopyOperation innerCopy;
-        Form1 form = new Form1();
+        Main form = new Main();
 
         public MoveOperation(string pathFrom, string pathTo)
         {

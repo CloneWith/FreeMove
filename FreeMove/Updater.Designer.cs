@@ -53,18 +53,20 @@ namespace FreeMove
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 13);
+            this.label1.Size = new System.Drawing.Size(159, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Checking for a new version...";
             // 
             // button_Ok
             // 
             this.button_Ok.Enabled = false;
-            this.button_Ok.Location = new System.Drawing.Point(222, 110);
+            this.button_Ok.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.button_Ok.Location = new System.Drawing.Point(222, 102);
             this.button_Ok.Name = "button_Ok";
-            this.button_Ok.Size = new System.Drawing.Size(75, 23);
+            this.button_Ok.Size = new System.Drawing.Size(75, 21);
             this.button_Ok.TabIndex = 1;
             this.button_Ok.Text = "Ok";
             this.button_Ok.UseVisualStyleBackColor = true;
@@ -72,26 +74,27 @@ namespace FreeMove
             // button_Cancel
             // 
             this.button_Cancel.Enabled = false;
-            this.button_Cancel.Location = new System.Drawing.Point(12, 110);
+            this.button_Cancel.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.button_Cancel.Location = new System.Drawing.Point(12, 102);
             this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_Cancel.Size = new System.Drawing.Size(75, 21);
             this.button_Cancel.TabIndex = 1;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 70);
+            this.progressBar1.Location = new System.Drawing.Point(12, 65);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(285, 23);
+            this.progressBar1.Size = new System.Drawing.Size(285, 21);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 2;
             // 
             // Updater
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 145);
+            this.ClientSize = new System.Drawing.Size(309, 134);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Ok);
