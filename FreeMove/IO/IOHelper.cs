@@ -56,8 +56,12 @@ namespace FreeMove
             //Check for correct file path format
             try
             {
-                Path.GetFullPath(source);
-                Path.GetFullPath(destination);
+                string srcPath = Path.GetFullPath(source);
+                string tagPath = Path.GetFullPath(destination);
+                if(srcPath == tagPath)
+                {
+                    exceptions.Add(new Exception("Same source and destination. Cannot do this."));
+                }
             }
             catch (Exception e)
             {

@@ -102,7 +102,7 @@ namespace FreeMove
         {
             Enabled = false;
             string source = textBox_From.Text.TrimEnd('\\');
-            string destination = Path.Combine(textBox_To.Text.Length > 3 ? textBox_To.Text.TrimEnd('\\') : textBox_To.Text, Path.GetFileName(source));
+            string destination = Path.Combine(textBox_To.Text.Length > 3 ? textBox_To.Text.TrimEnd('\\') : textBox_To.Text);
 
             if (PreliminaryCheck(source, destination))
             {
