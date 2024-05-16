@@ -44,6 +44,7 @@ namespace FreeMove
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressDialog));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label_Message = new System.Windows.Forms.Label();
             this.label_Progress = new System.Windows.Forms.Label();
@@ -52,45 +53,30 @@ namespace FreeMove
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 35);
+            resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(260, 23);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 0;
             // 
             // label_Message
             // 
-            this.label_Message.AutoSize = true;
-            this.label_Message.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label_Message, "label_Message");
             this.label_Message.Name = "label_Message";
-            this.label_Message.Size = new System.Drawing.Size(131, 13);
-            this.label_Message.TabIndex = 1;
-            this.label_Message.Text = "Moving files, please wait...";
             // 
             // label_Progress
             // 
-            this.label_Progress.Location = new System.Drawing.Point(149, 9);
+            resources.ApplyResources(this.label_Progress, "label_Progress");
             this.label_Progress.Name = "label_Progress";
-            this.label_Progress.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_Progress.Size = new System.Drawing.Size(123, 13);
-            this.label_Progress.TabIndex = 2;
-            this.label_Progress.Text = "123/321";
-            this.label_Progress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(197, 64);
+            resources.ApplyResources(this.button_Cancel, "button_Cancel");
             this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_Cancel.TabIndex = 3;
-            this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
             // 
-            // MoveDialog
+            // ProgressDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 94);
             this.ControlBox = false;
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.label_Progress);
@@ -99,10 +85,10 @@ namespace FreeMove
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MoveDialog";
+            this.Name = "ProgressDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Moving Files...";
+            this.Load += new System.EventHandler(this.ProgressDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

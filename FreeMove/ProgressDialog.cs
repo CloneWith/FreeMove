@@ -76,5 +76,10 @@ namespace FreeMove
                 progressBar1.Value = (int)(percentage * BAR_RESOLUTION + 0.5f);
             }));
         }
+
+        private void ProgressDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
