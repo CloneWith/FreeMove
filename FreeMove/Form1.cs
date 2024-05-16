@@ -91,7 +91,7 @@ namespace FreeMove
                 {
                     msg += ex.Message + "\n";
                 }
-                MessageBox.Show(msg, "Error");
+                MessageBox.Show(msg, Strings.Error);
                 return false;
             }
             return true;
@@ -117,11 +117,11 @@ namespace FreeMove
                         olddir.Attributes = attrib | FileAttributes.Hidden;
                     }
 
-                    MessageBox.Show(this, "Done!");
+                    MessageBox.Show(this, Strings.Done);
                 }
                 catch (IO.MoveOperation.CopyFailedException ex)
                 {
-                    switch (MessageBox.Show(this, string.Format($"Do you want to undo the changes?\n\nDetails:\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1))
+                    switch (MessageBox.Show(this, string.Format(Strings.PromptUndo + Strings.Details + $"\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1))
                     {
                         case DialogResult.Yes:
                             try
@@ -130,7 +130,7 @@ namespace FreeMove
                             }
                             catch (Exception ie)
                             {
-                                MessageBox.Show(this, ie.Message, "Could not remove copied contents. Try removing manually");
+                                MessageBox.Show(this, ie.Message, Strings.RemoveError);
                             }
                             break;
                         case DialogResult.No:
@@ -140,7 +140,7 @@ namespace FreeMove
                 }
                 catch (IO.MoveOperation.DeleteFailedException ex)
                 {
-                    switch (MessageBox.Show(this, string.Format($"Do you want to undo the changes?\n\nDetails:\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1))
+                    switch (MessageBox.Show(this, string.Format(Strings.PromptUndo + Strings.Details + $"\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1))
                     {
                         case DialogResult.Yes:
                             try
@@ -149,7 +149,7 @@ namespace FreeMove
                             }
                             catch (Exception ie)
                             {
-                                MessageBox.Show(this, ie.Message, "Could not move back contents. Try moving manually");
+                                MessageBox.Show(this, ie.Message, Strings.UndoError);
                             }
                             break;
                         case DialogResult.No:
@@ -159,11 +159,11 @@ namespace FreeMove
                 }
                 catch (IO.MoveOperation.MoveFailedException ex)
                 {
-                    MessageBox.Show(this, string.Format($"Details:\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, string.Format(Strings.Details + $"\n{ex.InnerException.Message}"), ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (OperationCanceledException)
                 {
-                    switch (MessageBox.Show(this, string.Format($"Do you want to undo the changes?"), "Cancelled", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                    switch (MessageBox.Show(this, string.Format(Strings.PromptUndo), Strings.Cancelled, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
                     {
                         case DialogResult.Yes:
                             try
@@ -173,7 +173,7 @@ namespace FreeMove
                             }
                             catch (Exception ie)
                             {
-                                MessageBox.Show(this, ie.Message, "Could not remove copied contents. Try removing manually");
+                                MessageBox.Show(this, ie.Message, Strings.RemoveError);
                             }
                             break;
                     }
@@ -185,7 +185,7 @@ namespace FreeMove
         private async Task BeginMove(string source, string destination)
         {
             //Move files
-            using (ProgressDialog progressDialog = new ProgressDialog("Moving files..."))
+            using (ProgressDialog progressDialog = new ProgressDialog(Strings.ProgressMoving))
             {
                 IO.MoveOperation moveOp = IOHelper.MoveDir(source, destination);
 
@@ -194,7 +194,7 @@ namespace FreeMove
 
                 progressDialog.CancelRequested += (sender, e) =>
                 {
-                    if (DialogResult.Yes == MessageBox.Show(this, "Are you sure you want to cancel?", "Cancel confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+                    if (DialogResult.Yes == MessageBox.Show(this, Strings.PromptCancel, Strings.TitleCancel, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
                     {
                         moveOp.Cancel();
                         progressDialog.BeginInvoke(new Action(() =>  progressDialog.Cancellable = false));
@@ -230,9 +230,9 @@ namespace FreeMove
                 InitialDelay = 600,
                 ReshowDelay = 500
             };
-            Tip.SetToolTip(this.textBox_From, "Select the folder you want to move");
-            Tip.SetToolTip(this.textBox_To, "Select where you want to move the folder");
-            Tip.SetToolTip(this.chkBox_originalHidden, "Select whether you want to hide the shortcut which is created in the old location or not");
+            Tip.SetToolTip(this.textBox_From, Strings.TipFrom);
+            Tip.SetToolTip(this.textBox_To, Strings.TipTo);
+            Tip.SetToolTip(this.chkBox_originalHidden, Strings.TipHidden);
         }
 
         private void Reset()
@@ -244,7 +244,7 @@ namespace FreeMove
 
         public static void Unauthorized(Exception ex)
         {
-            MessageBox.Show(Properties.Resources.ErrorUnauthorizedMoveDetails + ex.Message, "Error details");
+            MessageBox.Show(Properties.Resources.ErrorUnauthorizedMoveDetails + ex.Message, Strings.ErrorDetail);
         }
 
         #region Event Handlers
@@ -327,12 +327,12 @@ namespace FreeMove
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string msg = String.Format(Properties.Resources.AboutContent, System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion);
-            MessageBox.Show(msg, "About FreeMove");
+            MessageBox.Show(msg, Strings.About);
         }
 
         private void SafeModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Properties.Resources.DisableSafeModeMessage, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show(Properties.Resources.DisableSafeModeMessage, Strings.Warning, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 safeMode = false;
                 safeModeToolStripMenuItem.Checked = false;
