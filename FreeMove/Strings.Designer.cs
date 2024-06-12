@@ -70,11 +70,38 @@ namespace FreeMove {
         }
         
         /// <summary>
+        ///   查找类似 The \&quot;{0}\&quot; directory cannot be moved. 的本地化字符串。
+        /// </summary>
+        internal static string BlacklistedException {
+            get {
+                return ResourceManager.GetString("BlacklistedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Cancelled 的本地化字符串。
         /// </summary>
         internal static string Cancelled {
             get {
                 return ResourceManager.GetString("Cancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exception encountered while copying directory 的本地化字符串。
+        /// </summary>
+        internal static string CopyFailedException {
+            get {
+                return ResourceManager.GetString("CopyFailedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exception encountered while removing duplicate files in the old location 的本地化字符串。
+        /// </summary>
+        internal static string DeleteFailedException {
+            get {
+                return ResourceManager.GetString("DeleteFailedException", resourceCulture);
             }
         }
         
@@ -115,11 +142,83 @@ namespace FreeMove {
         }
         
         /// <summary>
+        ///   查找类似 Invalid path 的本地化字符串。
+        /// </summary>
+        internal static string InvPathException {
+            get {
+                return ResourceManager.GetString("InvPathException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid path format 的本地化字符串。
+        /// </summary>
+        internal static string InvPathFormatException {
+            get {
+                return ResourceManager.GetString("InvPathFormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to create the destination directory. 的本地化字符串。
+        /// </summary>
+        internal static string IOException {
+            get {
+                return ResourceManager.GetString("IOException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exception encountered while moving on the same drive 的本地化字符串。
+        /// </summary>
+        internal static string MoveFailedException {
+            get {
+                return ResourceManager.GetString("MoveFailedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Destination folder does not exist 的本地化字符串。
+        /// </summary>
+        internal static string NoDestException {
+            get {
+                return ResourceManager.GetString("NoDestException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Source folder does not exist 的本地化字符串。
+        /// </summary>
+        internal static string NoSourceException {
+            get {
+                return ResourceManager.GetString("NoSourceException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 There is not enough free space on the {0} disk. {1}MB required, {2} available. 的本地化字符串。
+        /// </summary>
+        internal static string NoSpaceException {
+            get {
+                return ResourceManager.GetString("NoSpaceException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 There are no updates available. 的本地化字符串。
         /// </summary>
         internal static string NoUpdate {
             get {
                 return ResourceManager.GetString("NoUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You do not have the required privileges to move the directory.\nTry running as administrator 的本地化字符串。
+        /// </summary>
+        internal static string PrivilegeException {
+            get {
+                return ResourceManager.GetString("PrivilegeException", resourceCulture);
             }
         }
         
@@ -169,6 +268,33 @@ namespace FreeMove {
         }
         
         /// <summary>
+        ///   查找类似 It&apos;s recommended not to move the {0} directory, you can disable safe mode in the Settings tab to override this check 的本地化字符串。
+        /// </summary>
+        internal static string SafeCheckException {
+            get {
+                return ResourceManager.GetString("SafeCheckException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Destination folder already contains a folder with the same name 的本地化字符串。
+        /// </summary>
+        internal static string SameNameException {
+            get {
+                return ResourceManager.GetString("SameNameException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Could not create a symbolic link.\nTry running as administrator 的本地化字符串。
+        /// </summary>
+        internal static string SymLinkException {
+            get {
+                return ResourceManager.GetString("SymLinkException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Select the folder you want to move 的本地化字符串。
         /// </summary>
         internal static string TipFrom {
@@ -201,6 +327,15 @@ namespace FreeMove {
         internal static string TitleCancel {
             get {
                 return ResourceManager.GetString("TitleCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lacking required permissions to create the destination directory. Try running as administrator. 的本地化字符串。
+        /// </summary>
+        internal static string UnauthorizedAccessException {
+            get {
+                return ResourceManager.GetString("UnauthorizedAccessException", resourceCulture);
             }
         }
         

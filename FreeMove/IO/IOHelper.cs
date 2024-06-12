@@ -61,12 +61,12 @@ namespace FreeMove
             }
             catch (Exception e)
             {
-                exceptions.Add(new Exception("Invalid path", e));
+                exceptions.Add(new Exception(Strings.InvPathException, e));
             }
             string pattern = @"^[A-Za-z]:\\{1,2}";
             if (!Regex.IsMatch(source, pattern) || !Regex.IsMatch(destination, pattern))
             {
-                exceptions.Add(new Exception("Invalid path format"));
+                exceptions.Add(new Exception(Strings.InvPathFormatException));
             }
 
             //Check if the chosen directory is blacklisted
@@ -75,7 +75,7 @@ namespace FreeMove
             {
                 if (source == item)
                 {
-                    exceptions.Add(new Exception($"The \"{source}\" directory cannot be moved."));
+                    exceptions.Add(new Exception(string.Format(Strings.BlacklistedException, source)));
                 }
             }
 
@@ -84,21 +84,21 @@ namespace FreeMove
                 source == Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) ||
                 source == Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)))
             {
-                exceptions.Add(new Exception($"It's recommended not to move the {source} directory, you can disable safe mode in the Settings tab to override this check"));
+                exceptions.Add(new Exception(string.Format(Strings.SafeCheckException, source)));
             }
 
             //Check for existence of directories
             if (!Directory.Exists(source))
-                exceptions.Add(new Exception("Source folder does not exist"));
+                exceptions.Add(new Exception(Strings.NoSourceException));
             
             if (Directory.Exists(destination))
-                exceptions.Add(new Exception("Destination folder already contains a folder with the same name"));
+                exceptions.Add(new Exception(Strings.SameNameException));
 
             try
             {
                 Form1 form = new Form1();
                 if (!form.chkBox_createDest.Checked && !Directory.Exists(Directory.GetParent(destination).FullName))
-                    exceptions.Add(new Exception("Destination folder does not exist"));
+                    exceptions.Add(new Exception(Strings.NoDestException));
             }
             catch(Exception e)
             {
@@ -123,7 +123,7 @@ namespace FreeMove
             }
             catch (UnauthorizedAccessException e)
             {
-                exceptions.Add(new Exception("You do not have the required privileges to move the directory.\nTry running as administrator", e));
+                exceptions.Add(new Exception(Strings.PrivilegeException, e));
             }
             finally
             {
@@ -135,7 +135,7 @@ namespace FreeMove
             try
             {
                 if (!CreateSymbolicLink(TestFile, Path.GetDirectoryName(destination), SymbolicLink.Directory))
-                    exceptions.Add(new Exception("Could not create a symbolic link.\nTry running as administrator"));
+                    exceptions.Add(new Exception(Strings.SymLinkException));
             }
             finally
             {
@@ -157,7 +157,7 @@ namespace FreeMove
             {
                 DriveInfo dstDrive = new(Path.GetPathRoot(destination));
                 if (dstDrive.AvailableFreeSpace < size)
-                    exceptions.Add(new Exception($"There is not enough free space on the {dstDrive.Name} disk. {size / 1000000}MB required, {dstDrive.AvailableFreeSpace / 1000000} available."));
+                    exceptions.Add(new Exception(string.Format(Strings.NoSpaceException, dstDrive.Name, size / 1000000, dstDrive.AvailableFreeSpace / 1000000)));
             } catch (Exception e)
             {
                 exceptions.Add(e);

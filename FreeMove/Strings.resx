@@ -120,8 +120,17 @@
   <data name="About" xml:space="preserve">
     <value>About FreeMove</value>
   </data>
+  <data name="BlacklistedException" xml:space="preserve">
+    <value>The \"{0}\" directory cannot be moved.</value>
+  </data>
   <data name="Cancelled" xml:space="preserve">
     <value>Cancelled</value>
+  </data>
+  <data name="CopyFailedException" xml:space="preserve">
+    <value>Exception encountered while copying directory</value>
+  </data>
+  <data name="DeleteFailedException" xml:space="preserve">
+    <value>Exception encountered while removing duplicate files in the old location</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details:</value>
@@ -135,8 +144,32 @@
   <data name="ErrorDetail" xml:space="preserve">
     <value>Error details</value>
   </data>
+  <data name="InvPathException" xml:space="preserve">
+    <value>Invalid path</value>
+  </data>
+  <data name="InvPathFormatException" xml:space="preserve">
+    <value>Invalid path format</value>
+  </data>
+  <data name="IOException" xml:space="preserve">
+    <value>Unable to create the destination directory.</value>
+  </data>
+  <data name="MoveFailedException" xml:space="preserve">
+    <value>Exception encountered while moving on the same drive</value>
+  </data>
+  <data name="NoDestException" xml:space="preserve">
+    <value>Destination folder does not exist</value>
+  </data>
+  <data name="NoSourceException" xml:space="preserve">
+    <value>Source folder does not exist</value>
+  </data>
+  <data name="NoSpaceException" xml:space="preserve">
+    <value>There is not enough free space on the {0} disk. {1}MB required, {2} available.</value>
+  </data>
   <data name="NoUpdate" xml:space="preserve">
     <value>There are no updates available.</value>
+  </data>
+  <data name="PrivilegeException" xml:space="preserve">
+    <value>You do not have the required privileges to move the directory.\nTry running as administrator</value>
   </data>
   <data name="ProgressMoving" xml:space="preserve">
     <value>Moving files...</value>
@@ -153,6 +186,15 @@
   <data name="RemoveError" xml:space="preserve">
     <value>Could not remove copied contents. Try removing manually.</value>
   </data>
+  <data name="SafeCheckException" xml:space="preserve">
+    <value>It's recommended not to move the {0} directory, you can disable safe mode in the Settings tab to override this check</value>
+  </data>
+  <data name="SameNameException" xml:space="preserve">
+    <value>Destination folder already contains a folder with the same name</value>
+  </data>
+  <data name="SymLinkException" xml:space="preserve">
+    <value>Could not create a symbolic link.\nTry running as administrator</value>
+  </data>
   <data name="TipFrom" xml:space="preserve">
     <value>Select the folder you want to move</value>
   </data>
@@ -164,6 +206,9 @@
   </data>
   <data name="TitleCancel" xml:space="preserve">
     <value>Cancel confirmation</value>
+  </data>
+  <data name="UnauthorizedAccessException" xml:space="preserve">
+    <value>Lacking required permissions to create the destination directory. Try running as administrator.</value>
   </data>
   <data name="UndoError" xml:space="preserve">
     <value>Could not move back contents. Try moving manually.</value>

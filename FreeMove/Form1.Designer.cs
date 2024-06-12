@@ -109,7 +109,6 @@ namespace FreeMove
             // 
             // folderBrowserDialog1
             // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // button_Move
@@ -134,105 +133,106 @@ namespace FreeMove
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.infoToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkForUpdateToolStripMenuItem,
             this.PermissionCheckToolStripMenuItem,
             this.safeModeToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             // 
             // checkForUpdateToolStripMenuItem
             // 
-            resources.ApplyResources(this.checkForUpdateToolStripMenuItem, "checkForUpdateToolStripMenuItem");
             this.checkForUpdateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkNowToolStripMenuItem,
             this.checkOnProgramStartToolStripMenuItem});
             this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
+            resources.ApplyResources(this.checkForUpdateToolStripMenuItem, "checkForUpdateToolStripMenuItem");
             // 
             // checkNowToolStripMenuItem
             // 
-            resources.ApplyResources(this.checkNowToolStripMenuItem, "checkNowToolStripMenuItem");
             this.checkNowToolStripMenuItem.Name = "checkNowToolStripMenuItem";
+            resources.ApplyResources(this.checkNowToolStripMenuItem, "checkNowToolStripMenuItem");
             this.checkNowToolStripMenuItem.Click += new System.EventHandler(this.CheckNowToolStripMenuItem_Click);
             // 
             // checkOnProgramStartToolStripMenuItem
             // 
-            resources.ApplyResources(this.checkOnProgramStartToolStripMenuItem, "checkOnProgramStartToolStripMenuItem");
             this.checkOnProgramStartToolStripMenuItem.Name = "checkOnProgramStartToolStripMenuItem";
+            resources.ApplyResources(this.checkOnProgramStartToolStripMenuItem, "checkOnProgramStartToolStripMenuItem");
             this.checkOnProgramStartToolStripMenuItem.Click += new System.EventHandler(this.CheckOnProgramStartToolStripMenuItem_Click);
             // 
             // PermissionCheckToolStripMenuItem
             // 
-            resources.ApplyResources(this.PermissionCheckToolStripMenuItem, "PermissionCheckToolStripMenuItem");
             this.PermissionCheckToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noneToolStripMenuItem,
             this.fastToolStripMenuItem,
             this.fullToolStripMenuItem});
             this.PermissionCheckToolStripMenuItem.Name = "PermissionCheckToolStripMenuItem";
+            resources.ApplyResources(this.PermissionCheckToolStripMenuItem, "PermissionCheckToolStripMenuItem");
             // 
             // noneToolStripMenuItem
             // 
-            resources.ApplyResources(this.noneToolStripMenuItem, "noneToolStripMenuItem");
             this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            resources.ApplyResources(this.noneToolStripMenuItem, "noneToolStripMenuItem");
             this.noneToolStripMenuItem.Click += new System.EventHandler(this.NoneToolStripMenuItem_Click);
             // 
             // fastToolStripMenuItem
             // 
-            resources.ApplyResources(this.fastToolStripMenuItem, "fastToolStripMenuItem");
             this.fastToolStripMenuItem.Checked = true;
             this.fastToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
+            resources.ApplyResources(this.fastToolStripMenuItem, "fastToolStripMenuItem");
             this.fastToolStripMenuItem.Click += new System.EventHandler(this.FastToolStripMenuItem_Click);
             // 
             // fullToolStripMenuItem
             // 
-            resources.ApplyResources(this.fullToolStripMenuItem, "fullToolStripMenuItem");
             this.fullToolStripMenuItem.Name = "fullToolStripMenuItem";
+            resources.ApplyResources(this.fullToolStripMenuItem, "fullToolStripMenuItem");
             this.fullToolStripMenuItem.Click += new System.EventHandler(this.FullToolStripMenuItem_Click);
             // 
             // safeModeToolStripMenuItem
             // 
-            resources.ApplyResources(this.safeModeToolStripMenuItem, "safeModeToolStripMenuItem");
             this.safeModeToolStripMenuItem.Checked = true;
             this.safeModeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.safeModeToolStripMenuItem.Name = "safeModeToolStripMenuItem";
+            resources.ApplyResources(this.safeModeToolStripMenuItem, "safeModeToolStripMenuItem");
             this.safeModeToolStripMenuItem.Click += new System.EventHandler(this.SafeModeToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
-            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportAnIssueToolStripMenuItem,
             this.gitHubToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             // 
             // reportAnIssueToolStripMenuItem
             // 
-            resources.ApplyResources(this.reportAnIssueToolStripMenuItem, "reportAnIssueToolStripMenuItem");
             this.reportAnIssueToolStripMenuItem.Name = "reportAnIssueToolStripMenuItem";
+            resources.ApplyResources(this.reportAnIssueToolStripMenuItem, "reportAnIssueToolStripMenuItem");
             this.reportAnIssueToolStripMenuItem.Click += new System.EventHandler(this.ReportAnIssueToolStripMenuItem_Click);
             // 
             // gitHubToolStripMenuItem
             // 
-            resources.ApplyResources(this.gitHubToolStripMenuItem, "gitHubToolStripMenuItem");
             this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
+            resources.ApplyResources(this.gitHubToolStripMenuItem, "gitHubToolStripMenuItem");
             this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.GitHubToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // chkBox_createDest

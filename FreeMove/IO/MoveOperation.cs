@@ -48,11 +48,11 @@ namespace FreeMove.IO
                 {
                     if (e is UnauthorizedAccessException)
                     {
-                        throw new UnauthorizedAccessException("Lacking required permissions to create the destination directory. Try running as administrator.");
+                        throw new UnauthorizedAccessException(Strings.UnauthorizedAccessException);
                     }
                     else
                     {
-                        throw new IOException("Unable to create the destination directory.");
+                        throw new IOException(Strings.IOException);
                     }
                 }
             }
@@ -79,7 +79,7 @@ namespace FreeMove.IO
                     }
                     catch (Exception e) when (!(e is OperationCanceledException))
                     {
-                        throw new MoveFailedException("Exception encountered while moving on the same drive", e);
+                        throw new MoveFailedException(Strings.MoveFailedException, e);
                     }
                 }
                 else
@@ -90,7 +90,7 @@ namespace FreeMove.IO
                     }
                     catch (Exception e) when (!(e is OperationCanceledException)) // Wrap inner exceptions to signal which phase failed
                     {
-                        throw new CopyFailedException("Exception encountered while copying directory", e);
+                        throw new CopyFailedException(Strings.CopyFailedException, e);
                     }
 
                     cts.Token.ThrowIfCancellationRequested();
@@ -100,7 +100,7 @@ namespace FreeMove.IO
                     }
                     catch (Exception e)
                     {
-                        throw new DeleteFailedException("Exception encountered while removing duplicate files in the old location", e);
+                        throw new DeleteFailedException(Strings.DeleteFailedException, e);
                     }
                 }
             }
